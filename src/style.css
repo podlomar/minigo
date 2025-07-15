@@ -1,51 +1,50 @@
 /* CSS Variables for Design System */
 :root {
   /* Primary Colors */
-  --color-bg-primary: #1a1a2e;
-  --color-bg-secondary: #16213e;
-  --color-bg-tertiary: #0f3460;
+  --color-bg-primary: #151529;
+  --color-bg-secondary: #1a1f30;
+  --color-bg-tertiary: #0f1728;
 
   /* Text Colors */
-  --color-text-primary: #e0e0e0;
-  --color-text-secondary: #b0b0b0;
-  --color-text-tertiary: #f0f0f0;
-  --color-text-accent: #ffd700;
+  --color-text-primary: #d0d0d0;
+  --color-text-secondary: #a8a8a8;
+  --color-text-tertiary: #e8e8e8;
+  --color-text-accent: #e6c547;
 
   /* UI Component Colors */
-  --color-panel-bg: rgba(30, 30, 50, 0.8);
-  --color-panel-border: rgba(255, 255, 255, 0.1);
-  --color-panel-border-hover: rgba(255, 255, 255, 0.15);
-
+  --color-panel-bg: rgba(20, 20, 35, 0.7);
+  --color-panel-border: rgba(255, 255, 255, 0.08);
+  --color-panel-border-hover: rgba(255, 255, 255, 0.12);
   /* Go Board Colors */
-  --color-wood-light: #d4a574;
-  --color-wood-dark: #c19a6b;
-  --color-wood-border: #8b4513;
-  --color-grid-lines: #5d4037;
+  --color-wood-light: #c5a478;
+  --color-wood-dark: #b89968;
+  --color-wood-border: #7a4b20;
+  --color-grid-lines: #5a3926;
 
   /* Stone Colors */
-  --color-stone-black-light: #4a4a4a;
-  --color-stone-black-dark: #1a1a1a;
-  --color-stone-black-border: #333;
+  --color-stone-black-light: #424242;
+  --color-stone-black-dark: #121212;
+  --color-stone-black-border: #2a2a2a;
   --color-stone-white-light: #ffffff;
-  --color-stone-white-dark: #e0e0e0;
-  --color-stone-white-border: #ccc;
+  --color-stone-white-dark: #e5e5e5;
+  --color-stone-white-border: #c5c5c5;
 
   /* Shadow & Effects */
-  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-board: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1);
-  --shadow-board-hover: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.15);
-  --shadow-stone: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.25);
+  --shadow-heavy: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --shadow-board: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 3px rgba(255, 255, 255, 0.08);
+  --shadow-board-hover: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.12);
+  --shadow-stone: 0 3px 6px rgba(0, 0, 0, 0.35);
+  --shadow-text: 1px 1px 3px rgba(0, 0, 0, 0.6);
 
   /* Gradients */
   --gradient-bg: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
   --gradient-wood: radial-gradient(circle at 50% 50%, var(--color-wood-light), var(--color-wood-dark));
-  --gradient-accent: linear-gradient(45deg, #ffd700, #ffed4e);
+  --gradient-accent: linear-gradient(45deg, #e6c547, #cc9f28);
   --gradient-stone-black: radial-gradient(circle at 30% 30%, var(--color-stone-black-light), var(--color-stone-black-dark));
   --gradient-stone-white: radial-gradient(circle at 30% 30%, var(--color-stone-white-light), var(--color-stone-white-dark));
-  --gradient-button-dark: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  --gradient-button-dark: linear-gradient(135deg, #2a2a2a, #151515);
 
   /* Layout & Spacing */
   --spacing-xs: 0.25rem;
