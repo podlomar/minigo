@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from './components/Header.tsx'
-import GameContainer from './components/GameContainer.tsx'
-import Footer from './components/Footer.tsx'
+import Header from './components/Header'
+import GameContainer from './components/GameContainer'
+import Footer from './components/Footer'
+import './App.css'
 
 const App: React.FC = () => {
   return (

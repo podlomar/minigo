@@ -1,0 +1,35 @@
+/* Game container */
+.gameContainer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-areas:
+    "info info info"
+    "history board controls";
+}
+
+.gameContainer> :nth-child(1) {
+  grid-area: info;
+}
+
+.gameContainer> :nth-child(2) {
+  grid-area: board;
+}
+
+.gameContainer> :nth-child(3) {
+  grid-area: history;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .gameContainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "board"
+      "history";
+  }
+}

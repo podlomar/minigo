@@ -1,5 +1,6 @@
 import React from 'react'
-import { Move } from '../go-game.ts'
+import { Move } from '../../go-game.ts'
+import styles from './MoveHistory.module.css'
 
 interface MoveHistoryProps {
   moveHistory: Move[]
@@ -7,11 +8,11 @@ interface MoveHistoryProps {
 
 const MoveHistory: React.FC<MoveHistoryProps> = ({ moveHistory }) => {
   return (
-    <div id="move-history">
-      <h3>Move History</h3>
-      <div id="moves-list">
+    <div className={styles.moveHistory}>
+      <h3 className={styles.title}>Move History</h3>
+      <div className={styles.movesList}>
         {moveHistory.length === 0 ? (
-          <div style={{ opacity: 0.6, fontStyle: 'italic' }}>
+          <div className={styles.emptyState}>
             No moves yet
           </div>
         ) : (
@@ -30,9 +31,9 @@ const MoveHistory: React.FC<MoveHistoryProps> = ({ moveHistory }) => {
             }
 
             return (
-              <div key={move.moveNumber} className="move-entry">
-                <span className="move-number">{move.moveNumber}.</span>
-                <span className="move-player">{moveText}</span>
+              <div key={move.moveNumber} className={styles.moveEntry}>
+                <span className={styles.moveNumber}>{move.moveNumber}.</span>
+                <span className={styles.movePlayer}>{moveText}</span>
               </div>
             )
           })

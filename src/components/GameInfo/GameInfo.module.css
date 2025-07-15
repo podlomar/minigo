@@ -1,0 +1,126 @@
+/* GameInfo styles */
+.gameInfo {
+  background: rgba(30, 30, 50, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.playerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.currentPlayer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.playerLabel {
+  font-weight: 600;
+  color: #b0b0b0;
+}
+
+.player {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.player.black {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: white;
+  border: 2px solid #4a4a4a;
+}
+
+.player.white {
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  color: #1a1a1a;
+  border: 2px solid #d0d0d0;
+}
+
+.capturedStones {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.captureCount {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.captureItem {
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Game controls */
+.gameControls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5a6578, #3d4758);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.newGameButton {
+  background: linear-gradient(135deg, #e53e3e, #c53030) !important;
+}
+
+.resetButton {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .playerInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gameControls {
+    flex-direction: column;
+    align-items: center;
+  }
+}

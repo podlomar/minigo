@@ -1,5 +1,6 @@
 import React from 'react'
-import { GameState } from '../go-game.ts'
+import { GameState } from '../../go-game.ts'
+import styles from './GameInfo.module.css'
 
 interface GameInfoProps {
   gameState: GameState
@@ -20,46 +21,40 @@ const GameInfo: React.FC<GameInfoProps> = ({
   const currentPlayerName = gameState.currentPlayer.charAt(0).toUpperCase() + gameState.currentPlayer.slice(1)
 
   return (
-    <div id="game-info">
-      <div className="player-info">
-        <div id="current-player">
-          <span className="player-label">Current Player:</span>
+    <div className={styles.gameInfo}>
+      <div className={styles.playerInfo}>
+        <div className={styles.currentPlayer}>
+          <span className={styles.playerLabel}>Current Player:</span>
           <span
-            id="player-indicator"
-            className={`player ${gameState.currentPlayer}`}
+            className={`${styles.player} ${styles[gameState.currentPlayer]}`}
           >
             {currentPlayerSymbol} {currentPlayerName}
           </span>
         </div>
-        <div id="captured-stones">
-          <div className="capture-count">
-            <span>⚫ Captured: <span id="black-captured">{gameState.capturedStones.black}</span></span>
-            <span>⚪ Captured: <span id="white-captured">{gameState.capturedStones.white}</span></span>
+        <div className={styles.capturedStones}>
+          <div className={styles.captureCount}>
+            <span className={styles.captureItem}>⚫ Captured: <span>{gameState.capturedStones.black}</span></span>
+            <span className={styles.captureItem}>⚪ Captured: <span>{gameState.capturedStones.white}</span></span>
           </div>
         </div>
       </div>
 
-      <div className="game-controls">
+      <div className={styles.gameControls}>
         <button
-          id="new-game"
+          className={`${styles.button} ${gameState.gameOver ? styles.newGameButton : styles.resetButton}`}
           onClick={onNewGame}
-          style={{
-            background: gameState.gameOver
-              ? 'linear-gradient(135deg, #e53e3e, #c53030)'
-              : 'linear-gradient(135deg, #4a5568, #2d3748)'
-          }}
         >
           {gameState.gameOver ? 'New Game' : 'Reset'}
         </button>
         <button
-          id="pass-turn"
+          className={styles.button}
           onClick={onPass}
           disabled={gameState.gameOver}
         >
           Pass
         </button>
         <button
-          id="undo-move"
+          className={styles.button}
           onClick={onUndo}
           disabled={!canUndo}
         >

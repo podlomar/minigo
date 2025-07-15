@@ -1,0 +1,48 @@
+/* Move history */
+.moveHistory {
+  background: rgba(30, 30, 50, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.title {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.movesList {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.emptyState {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.moveEntry {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.moveEntry:last-child {
+  border-bottom: none;
+}
+
+.moveNumber {
+  color: #b0b0b0;
+  font-weight: 600;
+  min-width: 30px;
+}
+
+.movePlayer {
+  font-weight: 500;
+}

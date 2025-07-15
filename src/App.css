@@ -1,0 +1,22 @@
+/* App layout styles */
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #app {
+    padding: 10px;
+  }
+}

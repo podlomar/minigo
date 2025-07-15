@@ -1,5 +1,6 @@
 import React from 'react'
-import { StoneColor } from '../go-game.ts'
+import { StoneColor } from '../../go-game.ts'
+import styles from './GoBoard.module.css'
 
 interface GoBoardProps {
   board: StoneColor[][]
@@ -35,13 +36,13 @@ const Intersection: React.FC<IntersectionProps> = ({
   }
 
   const classNames = [
-    'intersection',
-    isEdge.top && 'top',
-    isEdge.bottom && 'bottom',
-    isEdge.left && 'left',
-    isEdge.right && 'right',
-    isStar && 'star',
-    stone && 'occupied'
+    styles.intersection,
+    isEdge.top && styles.top,
+    isEdge.bottom && styles.bottom,
+    isEdge.left && styles.left,
+    isEdge.right && styles.right,
+    isStar && styles.star,
+    stone && styles.occupied
   ].filter(Boolean).join(' ')
 
   return (
@@ -52,7 +53,7 @@ const Intersection: React.FC<IntersectionProps> = ({
       data-col={col}
     >
       {stone && (
-        <div className={`stone ${stone} new`} />
+        <div className={`${styles.stone} ${styles[stone]} ${styles.new}`} />
       )}
     </div>
   )
@@ -62,8 +63,8 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
   const boardSize = 5
 
   return (
-    <div id="go-board-container">
-      <div id="go-board">
+    <div className={styles.goBoardContainer}>
+      <div className={styles.goBoard}>
         {board.map((row, rowIndex) =>
           row.map((stone, colIndex) => (
             <Intersection
