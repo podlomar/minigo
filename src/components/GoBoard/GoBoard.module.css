@@ -3,27 +3,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: var(--spacing-xl);
 }
 
 /* SVG Go board */
 .goBoard {
-  border-radius: 12px;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-board);
+  transition: var(--transition-fast);
 }
 
 .goBoard:hover {
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-board-hover);
 }
 
 /* Stone animation */
 .stone {
-  animation: placeStone 0.2s ease-out;
+  animation: placeStone var(--transition-fast);
 }
 
 @keyframes placeStone {
@@ -41,7 +37,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .goBoardContainer {
-    padding: 1rem;
+    padding: var(--spacing-md);
   }
 
   .goBoard {

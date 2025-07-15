@@ -41,19 +41,19 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
         {/* Board background with wood texture gradient */}
         <defs>
           <radialGradient id="woodGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#d4a574" />
-            <stop offset="100%" stopColor="#c19a6b" />
+            <stop offset="0%" stopColor="var(--color-wood-light)" />
+            <stop offset="100%" stopColor="var(--color-wood-dark)" />
           </radialGradient>
 
           {/* Stone gradients */}
           <radialGradient id="blackStone" cx="30%" cy="30%" r="70%">
-            <stop offset="0%" stopColor="#4a4a4a" />
-            <stop offset="100%" stopColor="#1a1a1a" />
+            <stop offset="0%" stopColor="var(--color-stone-black-light)" />
+            <stop offset="100%" stopColor="var(--color-stone-black-dark)" />
           </radialGradient>
 
           <radialGradient id="whiteStone" cx="30%" cy="30%" r="70%">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="100%" stopColor="#e0e0e0" />
+            <stop offset="0%" stopColor="var(--color-stone-white-light)" />
+            <stop offset="100%" stopColor="var(--color-stone-white-dark)" />
           </radialGradient>
 
           {/* Drop shadow filter */}
@@ -69,7 +69,7 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
           width={svgSize}
           height={svgSize}
           fill="url(#woodGradient)"
-          stroke="#8b4513"
+          stroke="var(--color-wood-border)"
           strokeWidth="3"
           rx="8"
         />
@@ -83,7 +83,7 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
               y1={margin + i * cellSize}
               x2={svgSize - margin}
               y2={margin + i * cellSize}
-              stroke="#5d4037"
+              stroke="var(--color-grid-lines)"
               strokeWidth="3"
               strokeLinecap="round"
             />
@@ -93,7 +93,7 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
               y1={margin}
               x2={margin + i * cellSize}
               y2={svgSize - margin}
-              stroke="#5d4037"
+              stroke="var(--color-grid-lines)"
               strokeWidth="3"
               strokeLinecap="round"
             />
@@ -105,7 +105,7 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
           cx={margin + 2 * cellSize}
           cy={margin + 2 * cellSize}
           r="6"
-          fill="#5d4037"
+          fill="var(--color-grid-lines)"
         />
 
         {/* Intersection click areas and stones */}
@@ -147,7 +147,7 @@ const GoBoard: React.FC<GoBoardProps> = ({ board, onIntersectionClick }) => {
                     cy={y}
                     r="24"
                     fill={stone === 'black' ? 'url(#blackStone)' : 'url(#whiteStone)'}
-                    stroke={stone === 'black' ? '#333' : '#ccc'}
+                    stroke={stone === 'black' ? 'var(--color-stone-black-border)' : 'var(--color-stone-white-border)'}
                     strokeWidth="1"
                     filter="url(#stoneShadow)"
                     className={styles.stone}

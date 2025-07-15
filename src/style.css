@@ -1,3 +1,76 @@
+/* CSS Variables for Design System */
+:root {
+  /* Primary Colors */
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-bg-tertiary: #0f3460;
+
+  /* Text Colors */
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-text-tertiary: #f0f0f0;
+  --color-text-accent: #ffd700;
+
+  /* UI Component Colors */
+  --color-panel-bg: rgba(30, 30, 50, 0.8);
+  --color-panel-border: rgba(255, 255, 255, 0.1);
+  --color-panel-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Go Board Colors */
+  --color-wood-light: #d4a574;
+  --color-wood-dark: #c19a6b;
+  --color-wood-border: #8b4513;
+  --color-grid-lines: #5d4037;
+
+  /* Stone Colors */
+  --color-stone-black-light: #4a4a4a;
+  --color-stone-black-dark: #1a1a1a;
+  --color-stone-black-border: #333;
+  --color-stone-white-light: #ffffff;
+  --color-stone-white-dark: #e0e0e0;
+  --color-stone-white-border: #ccc;
+
+  /* Shadow & Effects */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-board: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  --shadow-board-hover: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  --shadow-stone: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  /* Gradients */
+  --gradient-bg: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  --gradient-wood: radial-gradient(circle at 50% 50%, var(--color-wood-light), var(--color-wood-dark));
+  --gradient-accent: linear-gradient(45deg, #ffd700, #ffed4e);
+  --gradient-stone-black: radial-gradient(circle at 30% 30%, var(--color-stone-black-light), var(--color-stone-black-dark));
+  --gradient-stone-white: radial-gradient(circle at 30% 30%, var(--color-stone-white-light), var(--color-stone-white-dark));
+  --gradient-button-dark: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+
+  /* Layout & Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-round: 50%;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease-out;
+
+  /* Typography */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --line-height: 1.6;
+}
+
 /* Reset and global base styles */
 * {
   margin: 0;
@@ -6,10 +79,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #e0e0e0;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  color: var(--color-text-primary);
+  background: var(--gradient-bg);
   min-height: 100vh;
   overflow-x: auto;
 }

@@ -1,9 +1,9 @@
 /* GameInfo styles */
 .gameInfo {
-  background: rgba(30, 30, 50, 0.8);
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-panel-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-panel-border);
   backdrop-filter: blur(10px);
 }
 
@@ -11,38 +11,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 
 .currentPlayer {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-sm);
 }
 
 .playerLabel {
   font-weight: 600;
-  color: #b0b0b0;
+  color: var(--color-text-secondary);
 }
 
 .player {
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
 }
 
 .player.black {
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  background: var(--gradient-button-dark);
   color: white;
-  border: 2px solid #4a4a4a;
+  border: 2px solid var(--color-stone-black-light);
 }
 
 .player.white {
-  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  background: var(--gradient-stone-white);
   color: #1a1a1a;
   border: 2px solid #d0d0d0;
 }

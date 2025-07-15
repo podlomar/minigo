@@ -5,7 +5,7 @@
   flex-direction: column;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--spacing-xl);
 }
 
 main {
@@ -17,6 +17,6 @@ main {
 /* Responsive design */
 @media (max-width: 768px) {
   #app {
-    padding: 10px;
+    padding: var(--spacing-md);
   }
 }
