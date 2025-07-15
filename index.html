@@ -4,40 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiniGo - TypeScript Web Project</title>
+  <title>MiniGo - Play Go Online</title>
   <link rel="stylesheet" href="/src/style.css">
 </head>
 
 <body>
   <div id="app">
     <header>
-      <h1>Welcome to MiniGo</h1>
-      <p>A simple TypeScript web project</p>
+      <h1>🔴⚫ MiniGo</h1>
+      <p>Ancient strategy, modern web</p>
     </header>
 
     <main>
-      <section id="content">
-        <div class="card">
-          <h2>Getting Started</h2>
-          <p>This is a vanilla TypeScript project set up with Vite for fast development.</p>
-          <button id="clickBtn">Click me!</button>
-          <p id="counter">Clicks: 0</p>
+      <div id="game-container">
+        <div id="game-info">
+          <div class="player-info">
+            <div id="current-player">
+              <span class="player-label">Current Player:</span>
+              <span id="player-indicator" class="player black">⚫ Black</span>
+            </div>
+            <div id="captured-stones">
+              <div class="capture-count">
+                <span>⚫ Captured: <span id="black-captured">0</span></span>
+                <span>⚪ Captured: <span id="white-captured">0</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-controls">
+            <button id="new-game">New Game</button>
+            <button id="pass-turn">Pass</button>
+            <button id="undo-move" disabled>Undo</button>
+          </div>
         </div>
 
-        <div class="card">
-          <h2>Features</h2>
-          <ul>
-            <li>✅ TypeScript with strict mode</li>
-            <li>✅ Vite for fast development and building</li>
-            <li>✅ Modern ES modules</li>
-            <li>✅ Hot module replacement</li>
-          </ul>
+        <div id="go-board-container">
+          <div id="go-board"></div>
         </div>
-      </section>
+
+        <div id="move-history">
+          <h3>Move History</h3>
+          <div id="moves-list"></div>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <p>Built with TypeScript and Vite</p>
+      <p>Built with TypeScript • Go rules simplified for 5×5</p>
     </footer>
   </div>
 
