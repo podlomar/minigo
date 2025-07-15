@@ -1,0 +1,23 @@
+{
+  "name": "minigo",
+  "version": "1.0.0",
+  "description": "A simple TypeScript web project",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "typescript",
+    "vite",
+    "web"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^7.0.4"
+  }
+}
