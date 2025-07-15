@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto 1fr;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   width: 100%;
   max-width: 1200px;
   grid-template-areas:
