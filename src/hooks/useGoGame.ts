@@ -33,13 +33,13 @@ export const useGoGame = () => {
     while (stack.length > 0) {
       const pos = stack.pop()!
       const key = `${pos.row},${pos.col}`
-      
+
       if (visited.has(key)) continue
       visited.add(key)
-      
+
       if (isInBounds(pos.row, pos.col) && board[pos.row][pos.col] === color) {
         group.push(pos)
-        
+
         const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]
         for (const [dr, dc] of directions) {
           stack.push({ row: pos.row + dr, col: pos.col + dc })
@@ -61,9 +61,9 @@ export const useGoGame = () => {
         const adjCol = pos.col + dc
         const key = `${adjRow},${adjCol}`
 
-        if (isInBounds(adjRow, adjCol) && 
-            board[adjRow][adjCol] === null &&
-            !libertiesSet.has(key)) {
+        if (isInBounds(adjRow, adjCol) &&
+          board[adjRow][adjCol] === null &&
+          !libertiesSet.has(key)) {
           liberties.push({ row: adjRow, col: adjCol })
           libertiesSet.add(key)
         }
@@ -76,13 +76,13 @@ export const useGoGame = () => {
   const checkCaptures = useCallback((row: number, col: number, board: StoneColor[][], currentPlayer: 'black' | 'white'): Position[] => {
     const capturedStones: Position[] = []
     const opponentColor = currentPlayer === 'black' ? 'white' : 'black'
-    
+
     const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]
-    
+
     for (const [dr, dc] of directions) {
       const adjRow = row + dr
       const adjCol = col + dc
-      
+
       if (isInBounds(adjRow, adjCol) && board[adjRow][adjCol] === opponentColor) {
         const group = getGroup(adjRow, adjCol, board)
         if (getGroupLiberties(group, board).length === 0) {
@@ -93,7 +93,7 @@ export const useGoGame = () => {
         }
       }
     }
-    
+
     return capturedStones
   }, [isInBounds, getGroup, getGroupLiberties])
 
@@ -105,7 +105,7 @@ export const useGoGame = () => {
       newBoard[row][col] = prevState.currentPlayer
 
       const capturedStones = checkCaptures(row, col, newBoard, prevState.currentPlayer)
-      
+
       const move: Move = {
         player: prevState.currentPlayer,
         position: { row, col },
@@ -142,11 +142,11 @@ export const useGoGame = () => {
       }
 
       const newMoveHistory = [...prevState.moveHistory, move]
-      
+
       // Check if both players passed
       const lastTwoMoves = newMoveHistory.slice(-2)
-      const gameOver = lastTwoMoves.length === 2 && 
-                      lastTwoMoves.every(move => move.position === null)
+      const gameOver = lastTwoMoves.length === 2 &&
+        lastTwoMoves.every(move => move.position === null)
 
       return {
         ...prevState,
@@ -181,12 +181,12 @@ export const useGoGame = () => {
     setGameState(prevState => {
       const newMoveHistory = [...prevState.moveHistory]
       const lastMove = newMoveHistory.pop()!
-      
+
       const newBoard = prevState.board.map(r => [...r])
-      
+
       if (lastMove.position) {
         newBoard[lastMove.position.row][lastMove.position.col] = null
-        
+
         if (lastMove.capturedStones) {
           const opponentColor = lastMove.player === 'black' ? 'white' : 'black'
           for (const pos of lastMove.capturedStones) {

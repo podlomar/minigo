@@ -18,7 +18,7 @@ const MoveHistory: React.FC<MoveHistoryProps> = ({ moveHistory }) => {
           moveHistory.map((move) => {
             const symbol = move.player === 'black' ? '⚫' : '⚪'
             let moveText = ''
-            
+
             if (move.position) {
               const pos = String.fromCharCode(65 + move.position.col) + (move.position.row + 1)
               moveText = `${symbol} ${pos}`

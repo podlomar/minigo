@@ -9,12 +9,12 @@ interface GameInfoProps {
   canUndo: boolean
 }
 
-const GameInfo: React.FC<GameInfoProps> = ({ 
-  gameState, 
-  onNewGame, 
-  onPass, 
-  onUndo, 
-  canUndo 
+const GameInfo: React.FC<GameInfoProps> = ({
+  gameState,
+  onNewGame,
+  onPass,
+  onUndo,
+  canUndo
 }) => {
   const currentPlayerSymbol = gameState.currentPlayer === 'black' ? '⚫' : '⚪'
   const currentPlayerName = gameState.currentPlayer.charAt(0).toUpperCase() + gameState.currentPlayer.slice(1)
@@ -24,8 +24,8 @@ const GameInfo: React.FC<GameInfoProps> = ({
       <div className="player-info">
         <div id="current-player">
           <span className="player-label">Current Player:</span>
-          <span 
-            id="player-indicator" 
+          <span
+            id="player-indicator"
             className={`player ${gameState.currentPlayer}`}
           >
             {currentPlayerSymbol} {currentPlayerName}
@@ -40,26 +40,26 @@ const GameInfo: React.FC<GameInfoProps> = ({
       </div>
 
       <div className="game-controls">
-        <button 
-          id="new-game" 
+        <button
+          id="new-game"
           onClick={onNewGame}
           style={{
-            background: gameState.gameOver 
-              ? 'linear-gradient(135deg, #e53e3e, #c53030)' 
+            background: gameState.gameOver
+              ? 'linear-gradient(135deg, #e53e3e, #c53030)'
               : 'linear-gradient(135deg, #4a5568, #2d3748)'
           }}
         >
           {gameState.gameOver ? 'New Game' : 'Reset'}
         </button>
-        <button 
-          id="pass-turn" 
+        <button
+          id="pass-turn"
           onClick={onPass}
           disabled={gameState.gameOver}
         >
           Pass
         </button>
-        <button 
-          id="undo-move" 
+        <button
+          id="undo-move"
           onClick={onUndo}
           disabled={!canUndo}
         >

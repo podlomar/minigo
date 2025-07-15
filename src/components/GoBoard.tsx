@@ -20,13 +20,13 @@ interface IntersectionProps {
   isStar: boolean
 }
 
-const Intersection: React.FC<IntersectionProps> = ({ 
-  row, 
-  col, 
-  stone, 
-  onClick, 
+const Intersection: React.FC<IntersectionProps> = ({
+  row,
+  col,
+  stone,
+  onClick,
   isEdge,
-  isStar 
+  isStar
 }) => {
   const handleClick = () => {
     if (!stone) {
@@ -45,7 +45,7 @@ const Intersection: React.FC<IntersectionProps> = ({
   ].filter(Boolean).join(' ')
 
   return (
-    <div 
+    <div
       className={classNames}
       onClick={handleClick}
       data-row={row}

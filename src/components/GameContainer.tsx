@@ -13,20 +13,20 @@ const GameContainer: React.FC = () => {
 
   return (
     <div id="game-container">
-      <GameInfo 
+      <GameInfo
         gameState={gameState}
         onNewGame={newGame}
         onPass={pass}
         onUndo={undo}
         canUndo={canUndo}
       />
-      
-      <GoBoard 
+
+      <GoBoard
         board={gameState.board}
         onIntersectionClick={handleIntersectionClick}
       />
-      
-      <MoveHistory 
+
+      <MoveHistory
         moveHistory={gameState.moveHistory}
       />
     </div>
