@@ -1,10 +1,11 @@
 # MiniGo
 
-A modern web-based Go (Weiqi/Baduk) game built with TypeScript and Vite. Play the ancient strategy game in your browser with a beautiful dark theme and intuitive interface.
+A modern web-based Go (Weiqi/Baduk) game built with React, TypeScript, and Vite. Play the ancient strategy game in your browser with a beautiful dark theme and component-based architecture.
 
 ## Features
 
 - 🔴⚫ **5×5 Go Board** - Perfect for quick games and learning
+- ⚛️ **React Components** - Clean, modular component architecture
 - 🎨 **Dark Theme** - Beautiful, modern UI optimized for focus
 - ⚡ **TypeScript** with strict type checking for robust code
 - 🔥 **Vite** for lightning-fast development and optimized builds
@@ -15,7 +16,22 @@ A modern web-based Go (Weiqi/Baduk) game built with TypeScript and Vite. Play th
   - Move history tracking
   - Pass and undo functionality
   - Captured stone counting
-  - Game state management
+  - Game state management with React hooks
+
+## Component Architecture
+
+- **App** - Main application wrapper
+- **Header** - Game title and branding
+- **GameContainer** - Main game logic container
+- **GameInfo** - Player information and game controls
+- **GoBoard** - Interactive 5×5 Go board
+- **Intersection** - Individual board intersection
+- **MoveHistory** - Move tracking and display
+- **Footer** - App information
+
+## Custom Hooks
+
+- **useGoGame** - Complete game state management and logic
 
 ## How to Play
 
@@ -82,15 +98,25 @@ npm run type-check
 ```
 minigo/
 ├── src/
-│   ├── main.ts          # Main application and UI logic
-│   ├── go-game.ts       # Go game engine and rules
-│   ├── utils.ts         # Utility functions
-│   └── style.css        # Dark theme styles
-├── index.html           # HTML template
-├── package.json         # NPM configuration
-├── tsconfig.json        # TypeScript configuration
-├── vite.config.ts       # Vite configuration
-└── README.md           # This file
+│   ├── components/
+│   │   ├── Header.tsx        # App header component
+│   │   ├── Footer.tsx        # App footer component
+│   │   ├── GameContainer.tsx # Main game container
+│   │   ├── GameInfo.tsx      # Player info and controls
+│   │   ├── GoBoard.tsx       # Interactive Go board
+│   │   └── MoveHistory.tsx   # Move history display
+│   ├── hooks/
+│   │   └── useGoGame.ts      # Game state management hook
+│   ├── App.tsx              # Main React app component
+│   ├── main.tsx             # React app entry point
+│   ├── go-game.ts           # Go game types and interfaces
+│   ├── utils.ts             # Utility functions
+│   └── style.css            # Dark theme styles
+├── index.html               # HTML template
+├── package.json             # NPM configuration
+├── tsconfig.json            # TypeScript configuration
+├── vite.config.ts           # Vite configuration with React
+└── README.md               # This file
 ```
 
 ## Game Rules (Simplified for 5×5)
@@ -104,6 +130,7 @@ minigo/
 
 ## Technologies Used
 
+- **React** - Component-based UI library
 - **TypeScript** - Type-safe JavaScript with modern features
 - **Vite** - Fast build tool and development server
 - **CSS3** - Modern styling with gradients, animations, and grid layout

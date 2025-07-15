@@ -1,7 +1,7 @@
 {
   "name": "minigo",
   "version": "1.0.0",
-  "description": "A simple TypeScript web project",
+  "description": "A modern web-based Go (Weiqi/Baduk) game built with React and TypeScript",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,14 +10,25 @@
     "type-check": "tsc --noEmit"
   },
   "keywords": [
+    "go",
+    "weiqi",
+    "baduk",
+    "react",
     "typescript",
     "vite",
-    "web"
+    "game"
   ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
     "typescript": "^5.8.3",
     "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
