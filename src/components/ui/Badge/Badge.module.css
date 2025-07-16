@@ -3,8 +3,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  border-radius: var(--radius-md);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
   transition: var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -28,26 +28,26 @@
 
 /* Badge Variants */
 .default {
-  background: var(--color-panel-bg);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--color-text-primary);
-  border: 1px solid var(--color-panel-border);
+  border: none;
 }
 
 .accent {
-  background: var(--gradient-accent);
+  background: var(--color-text-accent);
   color: #1a1a1a;
   border: none;
   text-shadow: none;
 }
 
 .black {
-  background: var(--gradient-stone-black);
+  background: #1a1a1a;
   color: white;
-  border: 1px solid var(--color-stone-black-border);
+  border: none;
 }
 
 .white {
-  background: var(--gradient-stone-white);
+  background: #ffffff;
   color: #1a1a1a;
-  border: 1px solid var(--color-stone-white-border);
+  border: none;
 }

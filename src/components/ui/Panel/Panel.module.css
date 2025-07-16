@@ -2,13 +2,16 @@
 .panel {
   background: var(--color-panel-bg);
   border: 1px solid var(--color-panel-border);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(10px);
-  transition: var(--transition-normal);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-light);
 }
 
 .panel:hover {
+  background: rgba(40, 40, 60, 0.85);
   border-color: var(--color-panel-border-hover);
+  box-shadow: var(--shadow-medium);
 }
 
 /* Panel Padding Variants */

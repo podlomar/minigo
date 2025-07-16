@@ -2,12 +2,12 @@
 .button {
   border: none;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: var(--transition-fast);
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: var(--radius-md);
+  letter-spacing: 0.8px;
+  border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -18,17 +18,17 @@
 
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
 .button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
   transform: none !important;
 }
 
 .button:not(:disabled):hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .button:not(:disabled):active {
@@ -53,52 +53,47 @@
 
 /* Button Variants */
 .primary {
-  background: linear-gradient(135deg, #4a5568, #2d3748);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-medium);
+  background: #ffffff;
+  color: #1a1a1a;
+  box-shadow: var(--shadow-light);
 }
 
 .primary:not(:disabled):hover {
-  background: linear-gradient(135deg, #5a6578, #3d4758);
-  box-shadow: var(--shadow-heavy);
+  background: #f0f0f0;
+  box-shadow: var(--shadow-medium);
 }
 
 .secondary {
-  background: var(--color-panel-bg);
+  background: rgba(255, 255, 255, 0.15);
   color: var(--color-text-primary);
-  border: 1px solid var(--color-panel-border);
   box-shadow: var(--shadow-light);
 }
 
 .secondary:not(:disabled):hover {
-  background: rgba(20, 20, 35, 0.9);
-  border-color: var(--color-panel-border-hover);
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: var(--shadow-medium);
 }
 
 .danger {
-  background: linear-gradient(135deg, #e53e3e, #c53030);
+  background: #dc2626;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-light);
 }
 
 .danger:not(:disabled):hover {
-  background: linear-gradient(135deg, #f56565, #e53e3e);
-  box-shadow: var(--shadow-heavy);
-}
-
-.success {
-  background: linear-gradient(135deg, #38a169, #2f855a);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #b91c1c;
   box-shadow: var(--shadow-medium);
 }
 
+.success {
+  background: #16a34a;
+  color: white;
+  box-shadow: var(--shadow-light);
+}
+
 .success:not(:disabled):hover {
-  background: linear-gradient(135deg, #48bb78, #38a169);
-  box-shadow: var(--shadow-heavy);
+  background: #15803d;
+  box-shadow: var(--shadow-medium);
 }
 
 /* Full Width */
