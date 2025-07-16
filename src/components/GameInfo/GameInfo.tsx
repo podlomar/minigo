@@ -1,5 +1,6 @@
 import React from 'react'
 import { GameState } from '../../go-game.ts'
+import { Button, Badge, Panel } from '../ui'
 import styles from './GameInfo.module.css'
 
 interface GameInfoProps {
@@ -21,47 +22,48 @@ const GameInfo: React.FC<GameInfoProps> = ({
   const currentPlayerName = gameState.currentPlayer.charAt(0).toUpperCase() + gameState.currentPlayer.slice(1)
 
   return (
-    <div className={styles.gameInfo}>
+    <Panel className={styles.gameInfo}>
       <div className={styles.playerInfo}>
         <div className={styles.currentPlayer}>
           <span className={styles.playerLabel}>Current Player:</span>
-          <span
-            className={`${styles.player} ${styles[gameState.currentPlayer]}`}
+          <Badge
+            variant={gameState.currentPlayer === 'black' ? 'black' : 'white'}
+            size="large"
           >
             {currentPlayerSymbol} {currentPlayerName}
-          </span>
+          </Badge>
         </div>
         <div className={styles.capturedStones}>
           <div className={styles.captureCount}>
-            <span className={styles.captureItem}>⚫ Captured: <span>{gameState.capturedStones.black}</span></span>
-            <span className={styles.captureItem}>⚪ Captured: <span>{gameState.capturedStones.white}</span></span>
+            <span className={styles.captureItem}>⚫ Captured: <Badge variant="default">{gameState.capturedStones.black}</Badge></span>
+            <span className={styles.captureItem}>⚪ Captured: <Badge variant="default">{gameState.capturedStones.white}</Badge></span>
           </div>
         </div>
       </div>
 
       <div className={styles.gameControls}>
-        <button
-          className={`${styles.button} ${gameState.gameOver ? styles.newGameButton : styles.resetButton}`}
+        <Button
+          variant={gameState.gameOver ? 'success' : 'danger'}
           onClick={onNewGame}
         >
           {gameState.gameOver ? 'New Game' : 'Reset'}
-        </button>
-        <button
-          className={styles.button}
+        </Button>
+        <Button
+          variant="secondary"
           onClick={onPass}
           disabled={gameState.gameOver}
         >
           Pass
-        </button>
-        <button
-          className={styles.button}
+        </Button>
+        <Button
+          variant="primary"
           onClick={onUndo}
           disabled={!canUndo}
         >
           Undo
-        </button>
+        </Button>
       </div>
-    </div>
+    </Panel>
   )
 }
 

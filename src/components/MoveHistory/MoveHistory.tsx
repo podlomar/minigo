@@ -1,5 +1,6 @@
 import React from 'react'
 import { Move } from '../../go-game.ts'
+import { Panel, Badge } from '../ui'
 import styles from './MoveHistory.module.css'
 
 interface MoveHistoryProps {
@@ -8,8 +9,7 @@ interface MoveHistoryProps {
 
 const MoveHistory: React.FC<MoveHistoryProps> = ({ moveHistory }) => {
   return (
-    <div className={styles.moveHistory}>
-      <h3 className={styles.title}>Move History</h3>
+    <Panel title="Move History" className={styles.moveHistory}>
       <div className={styles.movesList}>
         {moveHistory.length === 0 ? (
           <div className={styles.emptyState}>
@@ -22,24 +22,30 @@ const MoveHistory: React.FC<MoveHistoryProps> = ({ moveHistory }) => {
 
             if (move.position) {
               const pos = String.fromCharCode(65 + move.position.col) + (move.position.row + 1)
-              moveText = `${symbol} ${pos}`
+              moveText = `${pos}`
               if (move.capturedStones && move.capturedStones.length > 0) {
                 moveText += ` (${move.capturedStones.length} captured)`
               }
             } else {
-              moveText = `${symbol} Pass`
+              moveText = `Pass`
             }
 
             return (
               <div key={move.moveNumber} className={styles.moveEntry}>
-                <span className={styles.moveNumber}>{move.moveNumber}.</span>
+                <Badge variant="default" size="small">{move.moveNumber}</Badge>
+                <Badge
+                  variant={move.player === 'black' ? 'black' : 'white'}
+                  size="small"
+                >
+                  {symbol}
+                </Badge>
                 <span className={styles.movePlayer}>{moveText}</span>
               </div>
             )
           })
         )}
       </div>
-    </div>
+    </Panel>
   )
 }
 

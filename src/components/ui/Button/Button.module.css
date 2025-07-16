@@ -1,0 +1,129 @@
+/* Button Base Styles */
+.button {
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  font-family: var(--font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+/* Button Sizes */
+.small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.8rem;
+}
+
+.medium {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 0.9rem;
+}
+
+.large {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1rem;
+}
+
+/* Button Variants */
+.primary {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+}
+
+.primary:not(:disabled):hover {
+  background: linear-gradient(135deg, #5a6578, #3d4758);
+  box-shadow: var(--shadow-heavy);
+}
+
+.secondary {
+  background: var(--color-panel-bg);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-panel-border);
+  box-shadow: var(--shadow-light);
+}
+
+.secondary:not(:disabled):hover {
+  background: rgba(20, 20, 35, 0.9);
+  border-color: var(--color-panel-border-hover);
+  box-shadow: var(--shadow-medium);
+}
+
+.danger {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+}
+
+.danger:not(:disabled):hover {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+  box-shadow: var(--shadow-heavy);
+}
+
+.success {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+}
+
+.success:not(:disabled):hover {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.85rem;
+  }
+
+  .small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+
+  .medium {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8rem;
+  }
+
+  .large {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 0.9rem;
+  }
+}

@@ -1,19 +1,7 @@
-/* Move history */
+/* Move history - Panel styles handled by Panel component */
 .moveHistory {
-  background: var(--color-panel-bg);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  border: 1px solid var(--color-panel-border);
-  backdrop-filter: blur(10px);
   max-height: 400px;
   overflow-y: auto;
-}
-
-.title {
-  color: var(--color-text-accent);
-  margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
-  margin-top: 0;
 }
 
 .movesList {
@@ -24,25 +12,23 @@
 .emptyState {
   opacity: 0.6;
   font-style: italic;
+  text-align: center;
+  padding: var(--spacing-md);
 }
 
 .moveEntry {
   padding: var(--spacing-xs) 0;
   border-bottom: 1px solid var(--color-panel-border);
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
 .moveEntry:last-child {
   border-bottom: none;
 }
 
-.moveNumber {
-  color: var(--color-text-secondary);
-  font-weight: 600;
-  min-width: 30px;
-}
-
 .movePlayer {
   font-weight: 500;
+  flex: 1;
 }
